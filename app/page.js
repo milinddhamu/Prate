@@ -8,11 +8,11 @@ export default function Page() {
   const router = useRouter()
   const {data:session,status} = useSession();
 
-  useEffect(()=>{
-    if(session?.user){
-      router.push("/home");
-    };
-  },[session]);
+  // useEffect(()=>{
+  //   if(session?.user){
+  //     router.push("/home");
+  //   };
+  // },[session]);
 
   return (
     <IndexPage />
