@@ -7,11 +7,11 @@ import { offsetLimitPagination } from "@apollo/client/utilities";
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJwbm9vaDZyOTY0bCIsImFub255bW91cyI6dHJ1ZSwiaWF0IjoxNzEwOTk0NDUyLCJleHAiOjE3MTEwODA4NTJ9.-rJXr7qiV51agiyP0yLL0kD2Y4ZzsjaBBw6xSQncLdk";
 
 const httpLink = new HttpLink({
-  uri: 'https://prate-server.onrender.com/graphql'
+  uri:process.env.NEXT_PUBLIC_HTTP_LINK 
 });
 
 const wsLink = new GraphQLWsLink(createClient({
-  url: 'ws://prate-server.onrender.com/graphql ',
+  url:process.env.NEXT_PUBLIC_WSS_LINK,
 }));
 
 const splitLink = split(
