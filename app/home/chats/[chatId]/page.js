@@ -70,16 +70,15 @@ const Page = ({params}) => {
         }
       },
       onCompleted:(e) => {
-        scrollToBottom();
         setMessageInput("");
       } 
-    })
+    }).then(()=> scrollToBottom())
   }
   const handleMessageInputChange = (e) => {
     setMessageInput(e.target.value)
   };
 
-  
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
