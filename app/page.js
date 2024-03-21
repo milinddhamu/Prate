@@ -7,12 +7,11 @@ import { useSession } from "next-auth/react";
 export default function Page() {
   const router = useRouter()
   const {data:session,status} = useSession();
-
-  // useEffect(()=>{
-  //   if(session?.user){
-  //     router.push("/home");
-  //   };
-  // },[session]);
+  useEffect(()=>{
+    if(status === "authenticated"){
+      router.push("/home");
+    };
+  },[status]);
 
   return (
     <IndexPage />
